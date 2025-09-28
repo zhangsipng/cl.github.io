@@ -59,7 +59,7 @@
           [<a href="{{ post.codeurl }}" target="_blank">Code</a>]
         {% endif %}
         {% if post.bibtex %}
-          [<a href="#" class="show-bibtex" data-bibtex="{{ post.bibtex | escape }}">BibTeX</a>]
+          [<a href="#" class="show-bibtex" data-bibtex="{{ post.bibtex | replace: '"', '&quot;' | escape }}">BibTeX</a>]
         {% endif %}
       </div>
       
