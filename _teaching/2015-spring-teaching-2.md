@@ -9,12 +9,3 @@ date: 2024-09-01
 ---
 
 
-
-Heading 1
-======
-
-Heading 2
-======
-
-Heading 3
-======
