@@ -1,14 +1,14 @@
 ---
-title: "Teaching 2"
+title: "计算机组成与体系结构A"
 collection: teaching
-type: "Workshop"
-permalink: /teaching/2015-spring-teaching-1
-venue: "University 1, Department"
-date: 2015-01-01
-location: "City, Country"
+type: "Specialized compulsory courses"
+#permalink: /teaching/2015-spring-teaching-1
+venue: "WuHan University, software engineering"
+date: 2024-09-01
+#location: "City, Country"
 ---
 
-This is a description of a teaching experience. You can use markdown like any other post.
+
 
 Heading 1
 ======
