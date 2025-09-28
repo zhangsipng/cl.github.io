@@ -1,0 +1,26 @@
+---
+title: "Ranking Optimization for Person Re-identification via Similarity and Dissimilarity"
+collection: publications
+category: conference
+date: 2015-01-01
+venue: 'ACM Multimedia (MM)'
+authors: Mang Ye, <b>Chao Liang</b>*, Zheng Wang, Qingming Leng, Jun Chen
+paperurl: https://dl.acm.org/doi/10.1145/2733373.2806326
+bibtex: "@inproceedings{10.1145/2733373.2806326,
+author = {Ye, Mang and Liang, Chao and Wang, Zheng and Leng, Qingming and Chen, Jun},
+title = {Ranking Optimization for Person Re-identification via Similarity and Dissimilarity},
+year = {2015},
+isbn = {9781450334594},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/2733373.2806326},
+doi = {10.1145/2733373.2806326},
+abstract = {Person re-identification is a key technique to match different persons observed in non-overlapping camera views.Many researchers treat it as a special object retrieval problem, where ranking optimization plays an important role. Existing ranking optimization methods utilize the similarity relationship between the probe and gallery images to optimize the original ranking list in which dissimilarity relationship is seldomly investigated. In this paper, we propose to use both similarity and dissimilarity cues in a ranking optimization framework for person re-identification. Its core idea is based on the phenomenon that the true match should not only be similar to the strong similar samples of the probe but also dissimilar to the strong dissimilar samples. Extensive experiments have shown the great superiority of the proposed ranking optimization method.},
+booktitle = {Proceedings of the 23rd ACM International Conference on Multimedia},
+pages = {1239–1242},
+numpages = {4},
+keywords = {person re-identification, ranking optimization, similarity and dissimilarity},
+location = {Brisbane, Australia},
+series = {MM '15}
+}"
+---
