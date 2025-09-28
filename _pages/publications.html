@@ -1,27 +1,200 @@
 ---
-layout: archive
+layout: single
 title: "Publications"
 permalink: /publications/
 author_profile: true
 ---
 
-{% if site.author.googlescholar %}
-  <div class="wordwrap">You can also find my articles on <a href="{{site.author.googlescholar}}">my Google Scholar profile</a>.</div>
-{% endif %}
+<style>
+  .page__title {
+    display: none !important;
+  }
+  .publications-page .publications-header {
+    color: #4A90E2;
+    font-size: 2.5rem;
+    font-weight: 300;
+    margin-bottom: 0.2em;
+    margin-top: 0;
+    line-height: 1.4;
+  }
+  .publication-year-section {
+    margin-bottom: 1rem;
+  }
+  .publication-year-title {
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: #333;
+    border-bottom: 2px solid #4A90E2;
+    padding-bottom: 0.1rem;
+  }
+  .publications-list {
+    margin-left: 0;
+  }
+  .publication-item {
+    margin-bottom: 0rem;
+    padding-bottom: 0rem;
+    border-bottom: none;
+    list-style: none;
+    position: relative;
+    padding-left: 20px;
+    line-height: 1;
+  }
+  .publication-item::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: #4A90E2;
+    font-weight: bold;
+    font-size: 1.2em;
+  }
+  .publication-authors {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+    color: #555;
+    line-height: 1.4;
+  }
+  .publication-title {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    line-height: 1.4;
+  }
+  .publication-title strong {
+    font-weight: 600;
+    color: #333;
+  }
+  .presentation-type {
+    color: #4A90E2;
+    font-weight: 500;
+    margin-left: 0.3rem;
+  }
+  .pdf-link {
+    color: #4A90E2;
+    text-decoration: none;
+    font-weight: normal;
+    margin-left: 0.5rem;
+  }
+  .pdf-link:hover {
+    text-decoration: underline;
+  }
+  .publication-venue {
+    font-size: 0.95rem;
+    color: #666;
+    font-style: italic;
+    margin-bottom: 0.1rem;
+  }
+  .publications-list {
+    padding-left: 0;
+  }
+  .publication-item {
+    list-style: none;
+  }
+  .publication-links {
+    margin: 10px 0;
+  }
+  .publication-links a {
+    text-decoration: none;
+    color: #4A90E2;
+    margin-right: 10px;
+  }
+  .publication-links a:hover {
+    text-decoration: underline;
+  }
+  .bibtex-content {
+    display: none;
+    background: #f5f5f5;
+    padding: 15px;
+    margin-top: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    font-family: 'Courier New', monospace;
+    font-size: 0.9em;
+    line-height: 1.4;
+  }
+  .bibtex-content pre {
+    margin: 0;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+  }
+</style>
 
-{% include base_path %}
-{% for year in (2015..2025) reversed %}
-  {% assign year_publications = site.publications | where: "date", year %}
-  {% if year_publications.size > 0 %}
-    <div class="publication-year">
-      <h2>{{ year }}</h2>
-      {% for post in year_publications %}
-        {% include archive-single.html %}
-      {% endfor %}
-    </div>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  // 处理 BibTeX 显示
+  const bibtexLinks = document.querySelectorAll('.show-bibtex');
+  bibtexLinks.forEach(function(link) {
+    link.addEventListener('click', function(e) {
+      e.preventDefault();
+      const bibtexContent = this.getAttribute('data-bibtex');
+      const bibtexDiv = this.parentNode.parentNode.querySelector('.bibtex-content');
+      const pre = bibtexDiv.querySelector('pre');
+      
+      if (bibtexDiv.style.display === 'none' || bibtexDiv.style.display === '') {
+        pre.textContent = bibtexContent;
+        bibtexDiv.style.display = 'block';
+        this.textContent = '[Hide BibTeX]';
+      } else {
+        bibtexDiv.style.display = 'none';
+        this.textContent = '[BibTeX]';
+      }
+    });
+  });
+});
+</script>
+
+
+
+<div class="publications-page">
+  <h1 class="publications-header">Publications</h1>
+  {% if site.author.googlescholar %}
+      <div class="wordwrap">You can also find my articles on <a href="{{site.author.googlescholar}}">my Google Scholar profile</a>.</div>
   {% endif %}
-{% endfor %}
-
-
-
-
+  {% include base_path %}
+  {% for year in (2015..2025) reversed %}
+    {% assign year_publications = site.publications | where: "date", year %}
+    {% if year_publications.size > 0 %}
+      <div class="publication-year-section">
+        <h2 class="publication-year-title">{{ year }}</h2>
+        <div class="publications-list">
+          {% for post in year_publications %}
+            <div class="publication-item">
+              <!-- 标题 -->
+              <div class="publication-title">
+                <strong>{{ post.title }}</strong>
+                {% if post.presentation_type %}
+                  <span class="presentation-type">({{ post.presentation_type }})</span>
+                {% endif %}
+              </div>
+              
+              <!-- 作者 -->
+              <div class="publication-authors">{{ post.authors }}</div>
+              
+              <!-- 期刊/会议 -->
+              <div class="publication-venue">
+                {% if post.venue %}
+                  {{ post.venue }}, {{ post.date | default: "1900-01-01" | date: "%Y" }}
+                {% endif %}
+              </div>
+              
+              <!-- 链接 -->
+              <div class="publication-links">
+                {% if post.paperurl %}
+                  [<a href="{{ post.paperurl }}" target="_blank" class="pdf-link">PDF</a>]
+                {% endif %}
+                {% if post.bibtex %}
+                  [<a href="#" class="show-bibtex" data-bibtex="{{ post.bibtex | replace: '"', '&quot;' | escape }}">BibTeX</a>]
+                {% endif %}
+              </div>
+              
+              <!-- BibTeX 内容区域 -->
+              <div class="bibtex-content" style="display: none; background: #f5f5f5; padding: 10px; margin-top: 10px; border-radius: 5px;">
+                <pre style="margin: 0; white-space: pre-wrap; font-family: 'Courier New', monospace;"></pre>
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+    {% endif %}
+  {% endfor %}
+</div>

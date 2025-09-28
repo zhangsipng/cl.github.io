@@ -1,12 +1,116 @@
 ---
-layout: archive
+layout: single
 title: "Teaching"
 permalink: /teaching/
 author_profile: true
 ---
-<div class="wordwrap">You can find my course about Quantum computing on <a href="https://nercms-mmap.github.io/WHUQC/"> Quantum computing link</a>.</div>
-{% include base_path %}
 
-{% for post in site.teaching reversed %}
-  {% include archive-single.html %}
-{% endfor %}
+<style>
+  .page__title {
+    display: none !important;
+  }
+  .teaching-page .teaching-header {
+    color: #4A90E2;
+    font-size: 2.5rem;
+    font-weight: 300;
+    margin-bottom: 1rem;
+    margin-top: 0;
+  }
+  .teaching-page .teaching-divider {
+    height: 1px;
+    background-color: #ccc;
+    margin-bottom: 2rem;
+    width: 100%;
+  }
+  .teaching-list {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+  }
+  .teaching-item {
+    margin-bottom: 0.8rem;
+    padding-left: 0;
+    position: relative;
+  }
+  .teaching-item::before {
+    content: "•";
+    color: #000;
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+  }
+  .teaching-content {
+    margin-left: 20px;
+  }
+  .teaching-semester {
+    color: #000;
+    font-weight: normal;
+  }
+  .teaching-course {
+    color: #4A90E2;
+    font-weight: normal;
+  }
+</style>
+
+<div class="teaching-page">
+  <h1 class="teaching-header">Teaching</h1>
+  <div class="teaching-divider"></div>
+  
+  <ul class="teaching-list">
+    <li class="teaching-item">
+      <div class="teaching-content">
+        <span class="teaching-semester">Fall 2024/2025:</span> 
+        <span class="teaching-course">计算机组成与体系结构A</span>
+      </div>
+    </li>
+    
+    <li class="teaching-item">
+      <div class="teaching-content">
+        <span class="teaching-semester">Spring 2024/2025:</span> 
+        <span class="teaching-course">量子计算</span>
+      </div>
+    </li>
+    
+    <li class="teaching-item">
+      <div class="teaching-content">
+        <span class="teaching-semester">Fall 2023/2024:</span> 
+        <span class="teaching-course">神经网络与深度学习</span>
+      </div>
+    </li>
+    
+    <li class="teaching-item">
+      <div class="teaching-content">
+        <span class="teaching-semester">Spring 2023/2024:</span> 
+        <span class="teaching-course">模式识别与机器学习</span>
+      </div>
+    </li>
+    
+    <li class="teaching-item">
+      <div class="teaching-content">
+        <span class="teaching-semester">Fall 2022/2023:</span> 
+        <span class="teaching-course">计算机组成原理</span>
+      </div>
+    </li>
+    
+    <li class="teaching-item">
+      <div class="teaching-content">
+        <span class="teaching-semester">Spring 2022/2023:</span> 
+        <span class="teaching-course">量子计算</span>
+      </div>
+    </li>
+    
+    <li class="teaching-item">
+      <div class="teaching-content">
+        <span class="teaching-semester">Fall 2021/2022:</span> 
+        <span class="teaching-course">神经网络与深度学习</span>
+      </div>
+    </li>
+    
+    <li class="teaching-item">
+      <div class="teaching-content">
+        <span class="teaching-semester">Spring 2021/2022:</span> 
+        <span class="teaching-course">模式识别与机器学习</span>
+      </div>
+    </li>
+  </ul>
+</div>

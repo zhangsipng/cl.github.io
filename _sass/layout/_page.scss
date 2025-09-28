@@ -436,3 +436,89 @@
   padding-bottom: 15px;
   border-bottom: 1px solid #eee;
 }
+
+/* Publications page specific styles */
+.publications-page {
+  .publications-header {
+    color: #4A90E2;
+    font-size: 2.5rem;
+    font-weight: 300;
+    margin-bottom: 2rem;
+    margin-top: 0;
+  }
+
+  .publication-year-section {
+    margin-bottom: 3rem;
+  }
+
+  .publication-year-title {
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    color: #333;
+    border-bottom: 2px solid #4A90E2;
+    padding-bottom: 0.5rem;
+  }
+
+  .publications-list {
+    margin-left: 0;
+  }
+
+  .publication-item {
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: none;
+    list-style: none;
+  }
+
+  .publication-authors {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+    color: #555;
+    line-height: 1.4;
+  }
+
+  .publication-title {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    line-height: 1.4;
+
+    strong {
+      font-weight: 600;
+      color: #333;
+    }
+  }
+
+  .presentation-type {
+    color: #4A90E2;
+    font-weight: 500;
+    margin-left: 0.3rem;
+  }
+
+  .pdf-link {
+    color: #4A90E2;
+    text-decoration: none;
+    font-weight: normal;
+    margin-left: 0.5rem;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  .publication-venue {
+    font-size: 0.95rem;
+    color: #666;
+    font-style: italic;
+    margin-bottom: 0.5rem;
+  }
+
+  /* Remove default list styling */
+  .publications-list {
+    padding-left: 0;
+  }
+
+  .publication-item {
+    list-style: none;
+  }
+}
