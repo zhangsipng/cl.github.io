@@ -138,5 +138,30 @@ $(document).ready(function () {
     offset: -scssMastheadHeight,
     preventDefault: false,
   });
+function initBibTeX() {
+    const bibtexLinks = document.querySelectorAll('.show-bibtex');
+    
+    bibtexLinks.forEach(link => {
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+        const bibtexContent = this.getAttribute('data-bibtex');
+        const publicationItem = this.closest('.publication-item');
+        const contentDiv = publicationItem.querySelector('.bibtex-content');
+        const preElement = contentDiv.querySelector('pre');
+        
+        // Toggle display
+        if (contentDiv.style.display === 'none' || !contentDiv.style.display) {
+          preElement.textContent = bibtexContent;
+          contentDiv.style.display = 'block';
+          this.textContent = 'BibTeX ▲';
+        } else {
+          contentDiv.style.display = 'none';
+          this.textContent = 'BibTeX ▼';
+        }
+      });
+    });
+  }
 
+  // Initialize BibTeX functionality
+  initBibTeX();
 });
